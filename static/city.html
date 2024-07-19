@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/city.css" />
+    <title>city</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/city.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css"/>
+    
 </head>
 <body>
-    <div class="city_weather">
+    <!--搜尋欄-->
+    <div class="nav-bar-div">
+        <div class="nav-bar-title-div">
+          <p class="bar_title" id="title">氣象小幫手</p>
+        </div>
+    </div>
+    
+    
+    
+
+    <scrtion class="search" style="margin-top: 100px;">
+        <div class="search__dropdown-group">
+            <label for="city">選擇縣市</label>
+            <select id="city" class="search__dropdown">
+                <option value="" disabled selected>選擇縣市</option>
+            </select>
+        </div>
+
+        <div class="search__dropdown-group">
+            <label for="district">選擇鄉鎮</label>
+            <select id="district" class="search__dropdown">
+                <option value="" disabled selected>請先選擇縣市</option>
+            </select>
+        </div>
+
+        <div class="search__button-container">
+            <button class="button" id="button">確定</button>
+        </div>
+
+    </scrtion>
+
+
+    <div class="city_weather" >
         
             <div class="city_weather_first"></div>
             <div class="city_weather_second"></div>
@@ -47,9 +81,9 @@
     </div>
 
     <!--一周預報-->
-    <div class="info" >
+    <div class="info">
         <div class="info_week">一周預報</div>
-        <table style="margin-top: 20px;" >
+        <table style="margin-top: 20px;">
             <tr>
                 <td class="title">0</td>
                 <td class="title">1</td>
@@ -80,54 +114,13 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
-                <td class="title">體感溫度</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-            </tr>
-            <tr>
-                <td class="title">紫外線</td>
-                <td>30</td>
-                <td>31</td>
-                <td>32</td>
-                <td>33</td>
-                <td>34</td>
-                <td>35</td>
-                <td>36</td>
-            </tr>
-            <tr>
-                <td class="title">相對濕度</td>
-                <td>30</td>
-                <td>31</td>
-                <td>32</td>
-                <td>33</td>
-                <td>34</td>
-                <td>35</td>
-                <td>36</td>
-            </tr>
-            <tr>
-                <td class="title">降雨機率</td>
-                <td>30</td>
-                <td>31</td>
-                <td>32</td>
-                <td>33</td>
-                <td>34</td>
-                <td>35</td>
-                <td>36</td>
-            </tr>
-        
-            
-            
         </table>
     </div>
-    
-    
 
+
+    
+    <script src="/static/js/search.js"></script>
     <script src="/static/js/city.js"></script>
+    <script src="/static/js/bar.js"></script>
 </body>
 </html>

@@ -4,15 +4,18 @@ from datetime import datetime, timedelta
 import os
 import requests
 from models.CityName import CityName
+from dotenv import load_dotenv
+import pytz
 
-current = datetime.now()
-current_day = current.strftime("%Y-%m-%d")
-next_day = (current + timedelta(days=1)).strftime("%Y-%m-%d")
+load_dotenv()
+
+raw_utc = datetime.now(pytz.utc)
+now = raw_utc.astimezone(pytz.timezone('Asia/Taipei')).replace(tzinfo=None).strftime("%Y-%m-%d")
 url = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001"
 params = {
     "sort": "time",
-    "timeFrom": f'{current_day}T00:00:00',
-    "timeTo": f"{next_day}T01:00:00",
+    "timeFrom": f'{now}T00:00:00',
+    # "timeTo": f"{next_day}T01:00:00",
 }
 headers = {"Authorization": os.getenv('CWB_API_KEY')}
 

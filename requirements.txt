@@ -1,3 +1,6 @@
 fastapi
 requests<2.29.0
 urllib3<2.0
+asyncio
+pytz
+httpx==0.27.0
